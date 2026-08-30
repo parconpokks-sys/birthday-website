@@ -1,0 +1,604 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #faf7ff;
+    color: #30243b;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   FLOATING BACKGROUND
+========================= */
+
+.floating-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.floating {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    opacity: 0.5;
+    color: #9b7bc7;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at top left, #eadcff, transparent 40%),
+        radial-gradient(circle at bottom right, #dcd0f7, transparent 40%),
+        #faf7ff;
+}
+
+.intro-content {
+    max-width: 650px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.small-text {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #8064aa;
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.name {
+    color: #8055b5;
+}
+
+.intro-description {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: auto;
+    color: #665873;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button {
+    border: none;
+    background: #8055b5;
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    margin-top: 30px;
+
+    box-shadow: 0 10px 30px rgba(128, 85, 181, 0.25);
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(128, 85, 181, 0.35);
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    right: 25px;
+    top: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(70, 40, 100, 0.1);
+
+    z-index: 100;
+
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #e8d8ff, transparent 35%),
+        radial-gradient(circle at 80% 80%, #d8cef4, transparent 35%),
+        #faf7ff;
+}
+
+.hero-content {
+    max-width: 800px;
+
+    animation: fadeUp 1s ease;
+}
+
+.hero h1 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(50px, 9vw, 100px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero p:not(.small-text) {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #665873;
+
+    line-height: 1.8;
+}
+
+.scroll-indicator {
+    margin-top: 70px;
+
+    font-size: 30px;
+
+    color: #8055b5;
+
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 120px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.section-title > p:last-child {
+    color: #766781;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    background: white;
+}
+
+.message-card {
+    max-width: 750px;
+
+    margin: auto;
+
+    background: #f8f3ff;
+
+    padding: 50px;
+
+    border-radius: 25px;
+
+    line-height: 2;
+
+    font-size: 16px;
+
+    box-shadow: 0 15px 50px rgba(80, 50, 110, 0.07);
+}
+
+.message-card p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 35px;
+
+    color: #8055b5;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.appreciate {
+    background: #faf7ff;
+}
+
+.cards {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background: white;
+
+    padding: 35px 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(80, 50, 110, 0.06);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    color: #49365a;
+}
+
+.card p {
+    color: #766781;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.memories {
+    background: white;
+}
+
+.gallery {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.photo {
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e6daf5;
+
+    box-shadow: 0 10px 30px rgba(70, 40, 100, 0.1);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   SPECIAL
+========================= */
+
+.special {
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center, #e9dcff, transparent 55%),
+        #faf7ff;
+}
+
+.special-content {
+    max-width: 700px;
+}
+
+.special h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    font-weight: 400;
+}
+
+.secret-message {
+    display: none;
+
+    margin-top: 50px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    line-height: 2;
+
+    box-shadow: 0 15px 50px rgba(70, 40, 100, 0.1);
+
+    animation: fadeUp 1s ease;
+}
+
+.secret-message h3 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    color: #8055b5;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: #30243b;
+
+    color: #e9dcff;
+
+    line-height: 2;
+}
+
+.footer-small {
+    opacity: 0.6;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 450px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: 55px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .section {
+        padding: 90px 20px;
+    }
+
+    .message-card {
+        padding: 30px 25px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 350px;
+    }
+
+    .music-button {
+        right: 15px;
+        top: 15px;
+    }
+
+}
+
+#youtube-player {
+    position: fixed;
+    width: 200px;
+    height: 112px;
+    left: -1000px;
+    top: -1000px;
+    opacity: 0;
+    pointer-events: none;
+}
